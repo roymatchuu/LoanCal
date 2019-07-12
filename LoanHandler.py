@@ -67,12 +67,12 @@ def main():
     loanList = []
 
     # creates the "Loan" object and appends to a list
-    for x in range(4):
-        name = sheet.cell(x + 3, 1)
-        t = sheet.cell(x + 3, 2)
-        amt = sheet.cell(x + 3, 3)
-        interest = sheet.cell(x + 3, 4)
-        dateBorrowed = sheet.cell(x + 3, 5)
+    for x in range(sheet.max_row):
+        name = sheet.cell(x+1, 1)
+        t = sheet.cell(x+1, 2)
+        amt = sheet.cell(x+1, 3)
+        interest = sheet.cell(x+1, 4)
+        dateBorrowed = sheet.cell(x+1, 5)
 
         print(name.value, " | ", t.value, " | ", amt.value, " | ", interest.value, " | ", dateBorrowed.value)
         l = Loan(name, t, amt, interest, dateBorrowed)
